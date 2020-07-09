@@ -8,7 +8,7 @@ let PORT= process.env.PORT || 3000
 let session= require('express-session') 
 let bcrypt= require('bcrypt')
 let hashedString = bcrypt.hashSync('yourStringHere', bcrypt.genSaltSync(10))
-let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `reno`;
+let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ `reno`;
 
 //localhost:27017/reno
 
