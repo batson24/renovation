@@ -5,7 +5,7 @@ let mongoose = require('mongoose');
 let request = require('request');
 var unirest = require("unirest");
 let reqK = unirest("GET", "https://realtor.p.rapidapi.com/properties/v2/list-sold")
-let data= require('/Users/batson24/Desktop/portfolio/project_2/models/apimodel.js')
+let data= require('../models/apimodel.js')
 
 
 

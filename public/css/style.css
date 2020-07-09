@@ -26,10 +26,11 @@ body{
     color: azure;
 }
 
-iframe{
-    margin-top: -300px;
-    margin-left: 120px;
-}
+ul{
+    display: inline-block;
+    margin:-500px 0px 100px 100px;
+    list-style: none;
+  }
 
 a{
     padding: 5px;

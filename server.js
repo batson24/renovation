@@ -20,6 +20,7 @@ mongoose.connection.once('open', ()=> { console.log('connected to mongo');
 // controller
 let renoController= require('./controllers/renocontrol.js')
 let apiController= require('./controllers/api.js')
+let properties= require('./models/sampleprops.js')
 //Session
 
 //App.use
@@ -41,6 +42,7 @@ app.get('/reno',(req,res)=>{
     console.log(req.session)   
     res.render('index.ejs',{
         tabTitle:'Home Page',
+        properties: properties,
     
 
     

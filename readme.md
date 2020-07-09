@@ -47,12 +47,9 @@ Have a link to your hosted working app in the README.md file in your github repo
 
 
 
-ls
-
 
 thurs.
 api delete, updat, edit
-css pages with text and boxes formatted
 finish password lecture
 
 friday
