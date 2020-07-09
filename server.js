@@ -39,7 +39,7 @@ app.use('/reno', apiController)
 
 //ROUTES
 app.get('/reno',(req,res)=>{
-    req.session.anyProperty= 'any value'
+    //req.session.anyProperty= 'any value'
     console.log(req.session)   
     res.render('index.ejs',{
         tabTitle:'Home Page',
