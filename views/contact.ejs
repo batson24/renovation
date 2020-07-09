@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<header>
+    <%- include ('./partials/header.ejs') %> 
+</header>
+<body>
+    <form class='login' action='/reno' method='POST'>
+        <label type='text' for='username' name='username'>Username</label>
+        <input type='text' name='username'> <br>
+        <label type='text' for='password' name='password'>Password</label>
+        <input type='password' name='password'>
+        <br>
+        <input type='submit' name='login' value='login'>
+        <br> <br>
+        <h1>Sign Up</h1>
+    
+</body>
+</html>
