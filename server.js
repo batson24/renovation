@@ -29,13 +29,13 @@ app.use(express.static('public')) //css
 app.use(express.urlencoded({extended: false}))
 app.use('/reno',renoController) //controller routes URGENT REMEMBER PREFIX
 app.use('/reno', apiController)
-app.use(
-    session({
+//app.use(
+  /*  session({
       secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
       resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
       saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
     })
-  )
+  )*/
 
 //ROUTES
 app.get('/reno',(req,res)=>{
