@@ -24,6 +24,7 @@ let properties= require('./models/sampleprops.js')
 //Session
 
 //App.use
+
 app.use(express.static('public')) //css
 app.use(express.urlencoded({extended: false}))
 app.use('/reno',renoController) //controller routes URGENT REMEMBER PREFIX

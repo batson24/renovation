@@ -1,3 +1,5 @@
+
+/*--------Header links*/
 .nav-tabs{
     background-color: rgb(252, 241, 228);
     padding: 15px;
@@ -7,6 +9,8 @@
     padding-right: 40px;
     
 }
+
+/* ---------Background image---------*/
 body{
     background-image: url('/css/image/background.jpg');
     width: 100%;
@@ -19,12 +23,21 @@ body{
   padding:0;
   
 }
+/*--------------House pics and Video--------------*/
 .renovation{
     margin-left:40px;
     display:flex;
     align-items: flex-start;
     color: azure;
 }
+.house{
+    display:inline-block
+  }
+
+.properties{
+    width:100px;
+    height: 80px;
+  }
 
 ul{
     display: inline-block;

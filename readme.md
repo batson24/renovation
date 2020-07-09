@@ -56,7 +56,7 @@ friday
 profile page with login and subscrib
 css
 testimonial page
-
+model correct
 sat.
 carousale
 css wrap up
