@@ -2,6 +2,12 @@ let express= require('express')
 let router= express.Router()
  let mongoose = require('mongoose');
 
+//let hashedString = bcrypt.hashSync('yourStringHere', bcrypt.genSaltSync(10))
+
+ 
+
+
+ 
 router.get('/new/subscribe',(req,res)=>{
     
     res.render('subscribe.ejs',{

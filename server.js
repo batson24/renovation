@@ -6,11 +6,11 @@ let mongoose= require('mongoose')
 require('dotenv').config()
 let PORT= process.env.PORT || 3000
 let session= require('express-session') 
-let bcrypt= require('bcrypt')
-let hashedString = bcrypt.hashSync('yourStringHere', bcrypt.genSaltSync(10))
 let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ `reno`;
+const bcrypt = require('bcrypt')
+const User = require('./models/profile.js')
 
-//localhost:27017/reno
+
 
 // Mongoose Connection
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true});
@@ -18,7 +18,7 @@ mongoose.connection.once('open', ()=> { console.log('connected to mongo');
 });
 
 // controller
-let renoController= require('./controllers/renocontrol.js')
+let userController= require('./controllers/user.js')
 let apiController= require('./controllers/api.js')
 let properties= require('./models/sampleprops.js')
 //Session
@@ -27,7 +27,7 @@ let properties= require('./models/sampleprops.js')
 
 app.use(express.static('public')) //css
 app.use(express.urlencoded({extended: false}))
-app.use('/reno',renoController) //controller routes URGENT REMEMBER PREFIX
+app.use('/reno',userController) //controller routes URGENT REMEMBER PREFIX
 app.use('/reno', apiController)
 //app.use(
   /*  session({
@@ -38,6 +38,10 @@ app.use('/reno', apiController)
   )*/
 
 //ROUTES
+app.get('/',(req,res)=>{
+    res.redirect('/reno')
+
+})
 app.get('/reno',(req,res)=>{
     //req.session.anyProperty= 'any value'
     console.log(req.session)   
@@ -49,14 +53,22 @@ app.get('/reno',(req,res)=>{
     
     })
 })
-
-app.get('/reno/new', (req,res)=>{
+app.get('/new', (req,res)=>{
+    
     res.render('new.ejs',{
     tabTitle:'Login'
+    
     })
 })
 
-app.post('/reno/show', (req,res)=>{
+app.post('/reno', (req,res)=>{
+
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+  User.create(req.body, (err, createdUser) => {
+      console.log(err)
+      console.log(req.body)
+   console.log('user is created', createdUser)
+    res.redirect('/reno/show')
 //if login successful redirect to show if error alert redirect to new
 
 //if signup successful redirect to profile setup edit page
@@ -73,14 +85,19 @@ app.post('/reno/show', (req,res)=>{
       //do something else if it's not
       console.log('nope, not a match')
     }
-    res.redirect('/')
-  })*/
-res.redirect('/reno')
+    res.redirect('/')*/
+  })
+
 })
 
 app.get('/reno/show',(req,res)=>{
+    res.render('show.ejs',{
+    
+    tabTitle:'Home Page',})
+    })
+    
 
-})
+
 
 app.delete('/reno/:id',(req,res)=>{
 

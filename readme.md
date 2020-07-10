@@ -46,20 +46,29 @@ At least one model with all 7 RESTful routes and full CRUD.
 Have a link to your hosted working app in the README.md file in your github repo
 
 
+early
+heroku
+make user name populate to show page
 
 
-thurs.
-api delete, updat, edit
-finish password lecture
 
 friday
-profile page with login and subscrib
-css
-testimonial page
-model correct
+profile page and change info update edit password
+testimonial user posts
+
+
+
+
+
 sat.
+contact
+
+sun
+api
 carousale
+
+mon
 css wrap up
-contact page
+
 
 

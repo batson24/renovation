@@ -7,8 +7,9 @@
 <header><%- include ('./partials/header.ejs') %></header>
 <body>
 
-
-    <form class='signup' action='/reno' method='POST'>
+<br><br>
+    <h1 class='signup'>Subscribe</h1> <br>
+    <form class='signing' action='/reno' method='POST'>
         <label type='text' for='firstname' name='name'>First Name</label>
         <input type='text' name='firstname'> <br>
 
@@ -22,9 +23,10 @@
         <input type='text' name='occupation'> <br>
 
         <label type='text' for='investmenttype' name='investmenttype'>Investment Type</label>
-        <input type='text' name='investmenttype'> <br>
+        <input type='text' name='investmenttype'> <br> 
 
-        <textarea for='aboutme' type='text' name='aboutme'></textarea>
+        <label type='text' for ='aboutme'>About Me</label> 
+        <textarea for='aboutme' type='text' name='aboutme'></textarea> <br>
 
         <label type='text' for='experience' name='experience'>Experience</label>
         <input type='text' name='experience'> <br>
@@ -35,10 +37,12 @@
         <input type='password' name='password'>
         <br>
 
-        <label type='text' for='password' name='password'>Confirm Password</label>
-        <input type='password' name='password'>
+        <label type='text' for='confirmpassword' name='confirmpassword'>Confirm Password</label>
+        <input type='confirmpassword' name='confirmpassword'>
         <br>
-        <input type='submit' name='signup' value='subscribe'>
+        <div class='membership'> </div>
+        <div class='membership'></div>
+        <input class='subscribebutton' type='submit' name='signup' value='subscribe'>
     
 </body>
 </html>
