@@ -1,5 +1,5 @@
 
-let express= require('express')
+/*let express= require('express')
 let router= express.Router()
 let mongoose = require('mongoose');
 let request = require('request');
@@ -28,4 +28,4 @@ api: data//.req.raw_body
 
 
 
-    module.exports=router
+    module.exports=router*/

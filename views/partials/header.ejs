@@ -1,10 +1,39 @@
 <div  class='nav justify-content-end'>
 <nav class='nav-tabs'>
-    <a href='/reno'  >Home </a>
-    <a href='/new' >Login</a>
-    <a href='/reno/new/subscribe' >Subscribe</a>
-    <a href='/reno/reviews' >Testimonials</a>
-    <a href='/reno/contact' >Contact Us</a>
+    <a href='/profile'  >Home </a>
+    <a href='/users/new' >Login</a>
+    <a href='/subscribe/new' >Subscribe</a>
+    
+    <a href='/contact/new' >Contact Us</a>
 
+   
+      
+
+    <% if (login) { %>
+        <a href='/funding/new' >Funding</a>
+        <a href='/profile/webinar' >Webinar</a>
+        <a href='/profile' ><%=login.displayname %></a>
+        <a href='/sessions' >Logout</a>
+        
+        <% } else { %>
+
+<% } %>
 </nav>
+
+
+
+       
+
+       
+<h3>
+<% if (login) { %>
+    <li>Welcome <%= login.username %></li>
+
+    <% } else { %>
+    
+    <% } %>
+    </h3>
+
+    
+
 </div>

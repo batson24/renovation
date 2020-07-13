@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="en">
 <head>
     
-    <%- include ('./partials/head.ejs') %>
+    <%- include ('../partials/head.ejs') %>
 
 </head>
 <header>
-    <%- include ('./partials/header.ejs') %> 
+    <%- include ('../partials/header.ejs') %> 
     
 </header>
 <body>
     
-    <form class='login' action='/reno' method='POST'>
+    <form class='login' action='/sessions' method='POST'>
         <label type='text' for='username' name='username'>Username</label>
 
         <input type='text' name='username'> <br>
         <label type='text' for='password' name='password'>Password</label >
         <input type='password' name='password'>
         <br>
-        <input type='submit' name='login' value='login'>
-       
+        <input class='log' type='submit' name='login' value='login'>
+     
 
     </form>
 <!-------need to chang to show route-->
 <br> <br>
 <h1 class='signup'>Sign Up</h1>
-    <form class='signing' action='/reno' method='POST'>
+    <form class='signing' action='/users' method='POST'>
         <label type='text' for='firstname' name='name'>First Name</label>
         <input type='text' name='firstname'> <br>
 
@@ -56,12 +56,25 @@
         <label type='text' for='confirmpassword' name='confirmpassword'>Confirm Password</label>
         <input type='password' name='confirmpassword'>
         <br>
-        <button class='signupbutton' >Signup</button>
+        <button class='sign' class='signupbutton' >Signup</button>
 
 
        
 
     </form>
     
+
+    <script>
+       $(()=>{
+            $('.log').on('click',()=>{
+
+            })
+                
+            })
+
+
+        
+
+    </script>
 </body>
 </html>

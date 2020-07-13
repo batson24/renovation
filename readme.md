@@ -46,29 +46,22 @@ At least one model with all 7 RESTful routes and full CRUD.
 Have a link to your hosted working app in the README.md file in your github repo
 
 
-early
-heroku
-make user name populate to show page
 
 
 
-friday
-profile page and change info update edit password
-testimonial user posts
+        
 
 
 
+3rd edit---for signup
+2nd css  webinar portfolio subscribe, partials hide when logged in links no user------------6-9
+5th delete profile
+4th delete post
 
 
-sat.
-contact
 
-sun
-api
-carousale
+1st all questions and help 9 confirm, hash issue---6-9
 
-mon
-css wrap up
 
 
 

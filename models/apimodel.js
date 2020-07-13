@@ -1,5 +1,5 @@
 
-let unirest = require("unirest");
+/*let unirest = require("unirest");
 
 let req = unirest("GET", "https://realtor.p.rapidapi.com/properties/v2/list-sold");
 let realtorData= ''
@@ -38,3 +38,4 @@ module.exports={
 
 
 
+*/

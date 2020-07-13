@@ -1,5 +1,5 @@
 let mongoose= require('mongoose')
-let subscribeSchema= new mongoose.Schema({
+let userSchema= new mongoose.Schema({
     firstname: {type:String, unique: true, required: true},
     lastname: {type:String, unique: true, required: true},
     displayname: {type:String, unique: true, required: true},
@@ -12,5 +12,5 @@ let subscribeSchema= new mongoose.Schema({
     confirmpassword: {type:String,  required: true},
     
 })
-let Subscribe= mongoose.model('Subscribe', subscribeSchema)
-module.exports= Subscribe
+let User= mongoose.model('User', userSchema)
+module.exports= User

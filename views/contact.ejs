@@ -8,15 +8,19 @@
     <%- include ('./partials/header.ejs') %> 
 </header>
 <body>
-    <form class='login' action='/reno' method='POST'>
-        <label type='text' for='username' name='username'>Username</label>
-        <input type='text' name='username'> <br>
-        <label type='text' for='password' name='password'>Password</label>
-        <input type='password' name='password'>
-        <br>
-        <input type='submit' name='login' value='login'>
-        <br> <br>
-        <h1>Sign Up</h1>
+    <br><br>
+    <h1 class='contactus'>Contact US</h1> <br><br>
     
+    <form class='signing' action='/contact' method='POST'>
+        <label type='text' for='email' name='email'>Email</label>
+        <input type='text' name='email'> <br>
+        <label type='text' for='subject' name='subject'>Subject</label>
+        <input type='text' name='subject'>
+        <br>
+        <label type='text' for='info' name='info'></label>
+        <textarea type='text' for='info' name='info'></textarea> <br><br>
+        <input class='subscribebutton' type='submit' name='contact' value='Submit'>
+        <br> <br>
+        
 </body>
 </html>
