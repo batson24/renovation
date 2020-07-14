@@ -45,7 +45,13 @@
       
          
 </form>
-
+<% for (i=0; i < fund.length; i++) { %>
+    <div class='portfolio'>
+     Project Name: <%=fund[i].projectName%>
+      Funding Amount: <%=fund[i].fundingAmount%>
+     Success Story:  <%=fund[i].story%>
+    </div>
+  <%}%>  
 
 </body>
 
@@ -55,12 +61,11 @@ $(()=>{
             $(document).ready(function () {
                 $(".addProject").click(function(){
                     $("#addProject").append('<br><label for="projectname"> Project Name</label>' +
-                        '<input name= "projectName" type="text" style="width: 60%;"  placeholder="projectname">'+
-                        '<br>'+
-                        '<label for="fundingamount" ><br><br> Funding Amount</label>'+
-                        '<input type="text" name= "fundingAmount" placeholder="Funding Amount">'+
+                        '<input name= "projectName" type="text" style="width: 60%;"  placeholder="projectname">' +
+                        '<label for="fundingAmount"> Funding Amount</label>'+
+                        '<input type="text" name= "fundingAmount" placeholder="Funding Amount">'+ '<br>' +
                         '<label for="story">Succes Story</label>'+
-                        '<input name="story" type="text"  placeholder="Success Story"/>'+
+                        '<input name="story" type="text"  placeholder="Success Story"/>'+ '<br>' +
                         '<input type="submit" name="submit"/>'
                         
                        );      
@@ -77,4 +82,6 @@ $(()=>{
 
 
 </script>
+
+ 
 </html>

@@ -34,11 +34,7 @@ sessions.post('/', (req,res)=>{
         req.session.login = foundUser
    
         console.log('here',req.session.login)
-        //res.render('./sessions/profile.ejs',{
-         // tabTitle:'Login',
-          
-        //  user:foundUser
-      //  })
+        
       res.redirect('/')
       } else {
        
@@ -97,25 +93,6 @@ sessions.delete('/:id',  (req, res) => {
     
   })
 })
-/*
-sessions.delete('/:id',  (req, res) => {
-  User.findOneAndRemove(req.params.id, { useFindAndModify: false }, (err, data)=>{
-User
-    .exec()
-    .then(doc =>{
-      res.redirect('/profile') //redirect back to fruits index
-    })
-    
-  })
-})
-*/
-
-
-
-
-
-
-
 
 
 

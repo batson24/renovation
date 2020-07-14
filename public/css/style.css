@@ -230,6 +230,13 @@ a{
   border-style:dotted 
 }
 
+.portfolio{
+  display: inline-block;
+  flex-direction:row;
+  width:180px;
+  height:100px;
+  border-style:dotted 
+}
 
 /*---------Media Styles------*/
 

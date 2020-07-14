@@ -2,7 +2,7 @@ let express= require('express')
 let funding= express.Router()
  let mongoose = require('mongoose');
  let Funding= require('../models/funding.js')
-
+let fund = []
 
 
 
@@ -12,22 +12,40 @@ funding.get('/new',(req,res)=>{
     res.render('funding.ejs',{
         tabTitle:'Funding',
        login: req.session.login,
-
+        
+    
     })
-   
+    
 
 })
 
 
 funding.post('/', (req,res)=>{
 
-  Funding.create(req.body ,(error, createdFunding)=>{
-   console.log(createdFunding)
-res.redirect('/funding/new')
-      
 
+  Funding.create(req.body ,(error, createdFunding)=>{
+    
+   
+  
+console.log(createdFunding)
+fund.push(createdFunding)
+console.log('this is ', fund)
+res.render('new.ejs',{
+  tabTitle:'Funding',
+       login: req.session.login,
+       fund: fund
+       
+
+})
+
+    
+    
+    
 
   })
+   
+    
+  
 })
 
 
