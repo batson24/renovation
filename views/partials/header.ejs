@@ -1,8 +1,23 @@
 <div  class='nav justify-content-end'>
 <nav class='nav-tabs'>
     <a href='/profile'  >Home </a>
-    <a href='/users/new' >Login</a>
+
+    <% if (login) { %>
+   
+          
+    <% } else { %>
+        <a href='/users/new' >Login</a>
+
+
+        <% } %>
+<!----------
+        <% if (login) { %>
+   
+          
+            <% } else { %>   ------->
     <a href='/subscribe/new' >Subscribe</a>
+
+   <!-------- <% } %> ------->
     
     <a href='/contact/new' >Contact Us</a>
 
@@ -12,7 +27,7 @@
     <% if (login) { %>
         <a href='/funding/new' >Funding</a>
         <a href='/profile/webinar' >Webinar</a>
-        <a href='/profile' ><%=login.displayname %></a>
+        <a href='/sessions/show' ><%=login.displayname %></a>
         <a href='/sessions' >Logout</a>
         
         <% } else { %>
@@ -20,14 +35,11 @@
 <% } %>
 </nav>
 
-
-
-       
-
-       
-<h3>
+ </div>     
+ <br><br 
+<h3 class='welcome'>
 <% if (login) { %>
-    <li>Welcome <%= login.username %></li>
+<li style='font-size:30px; color:rgb(63, 46, 25); list-style: none;'>Welcome <%= login.username %></li>
 
     <% } else { %>
     
@@ -36,4 +48,3 @@
 
     
 
-</div>

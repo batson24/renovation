@@ -8,7 +8,7 @@ let userSchema= new mongoose.Schema({
     aboutme: String,
     experience: Number,
     username: {type:String, unique: true, required: true},
-    password: {type:String, unique: true, required: true},
+    password: {type:String, required: true},
     confirmpassword: {type:String,  required: true},
     
 })

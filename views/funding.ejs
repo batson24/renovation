@@ -6,7 +6,74 @@
 
 <header><%- include ('./partials/header.ejs') %></header>
 <body>
-    <h1>Funding</h1>
+  <br><br>
+    <h1 class='displayname'>Funding</h1> <br><br>
+    <div class='webinar'>
+       
+          Upload Documents: <br>
+          Tax Returns <br>
+          Income Verification<br>
+          Loan Amount<br>
+
+            <form action='' method='POST'>
+          <input class='fund' type='submit' value='Upload'> 
+          </form>
+
+           <form action='' method='POST'>
+          <input class='fund' type='submit' value='Get Funded'> 
+          </form>
+         <form action='' method='POST'>
+          <input class='fund' type='submit' value='Edit'> 
+          </form>
+
+          <br>
+          
+    </div>
+    <br><br>
+    <div class='webinar'>
+        
+        Project Renovation<br>
+          Funding Amount: $175,000 <br>
+          <br>
+          <input class='register' type='submit' value='delete'> 
+    </div>
+    <br> <br> <br>
+          
+    <button class='addProject'>Add Project</button>
+    <form style='font-size:20px' id='addProject' action='/funding/' method='POST'>
+      
+      
+         
+</form>
     
 </body>
+
+<script>
+$(()=>{
+
+            $(document).ready(function () {
+                $(".addProject").click(function(){
+                    $("#addProject").append('<br><label for="projectname"> Project Name</label>' +
+                        '<input name= "projectName" type="text" style="width: 60%;"  placeholder="projectname">'+
+                        '<br>'+
+                        '<label for="fundingamount" ><br><br> Funding Amount</label>'+
+                        '<input type="text" name= "fundingAmount" placeholder="Funding Amount">'+
+                        '<label for="story">Succes Story</label>'+
+                        '<input name="story" type="text"  placeholder="Success Story"/>'+
+                        '<input type="submit" name="submit"/>'
+                        
+                       );      
+
+                });
+
+            })
+
+
+      
+})
+
+
+
+
+</script>
 </html>

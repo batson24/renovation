@@ -43,6 +43,7 @@ app.use('/contact',contactController) //controller routes URGENT REMEMBER PREFIX
 //app.use('/profile', apiController)
 app.use('/subscribe', subscribeController)
 app.use('/funding', fundingController)
+app.use(methodOverride('_method'));
 
 
   //sessions
@@ -67,29 +68,25 @@ app.get('/profile',(req,res)=>{
     })
 })
 
+app.get('/profile/webinar',(req,res)=>{
 
+    console.log(req.session)   
+    res.render('profile/webinar.ejs',{
+        tabTitle:'Webinar',
 
+       login: req.session.login
+    
 
-
- 
-
-
-
-app.delete('/profile/',(req,res)=>{
-    User.findByUsernameAndRemove(req.session.currentUser, { useFindAndModify: false }, (err, data)=>{
-        //res.redirect('/store') //redirect back to fruits index
-      })
+    
+    })
 })
 
-app.get('/profile/:id/edit', (req, res)=>{
-    User.findById(req.params.id, (err, foundUser)=>{
-        res.render('edit.ejs',
-          { user: foundUser,
-           login: req.session.login
-           //user: User.findById[req.params.id] //pass in found user 
-        })
-})
-  })
+
+  
+
+
+
+
 
  
 

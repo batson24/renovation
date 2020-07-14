@@ -10,14 +10,13 @@
 <body>
     <h1>Edit Profile: <%=user.displayname%></h1>
 
-    <form  action="/profile/<%user.id%>?_method=PUT" method="POST">
-        <input id='deleteprofile' type="submit" value="DELETE Profile"/>
-     </form>
+   
      
-     <form class='deleteprofile' action="/profile/<%users.id%>?_method=PUT" method="POST">
-          <input id='editprofile' type="submit" value="Edit Profile"/>
-      </form>
-     <form class='signing' action='/reno/show' method='POST'>
+     
+
+     <form class='signing' action='/sessions/<%= user.id %>?_method=PUT'  method='POST'>
+<br>
+        <input style='margin-left: 275px; width:100px;' class='editprofile' id='editprofile' type="submit" value="Edit Profile"/>
          <label type='text' for='firstname' name='name'>First Name</label>
          <input type='text' name='firstname' value='<%=user.firstname%>'> <br>
      
@@ -48,6 +47,6 @@
          <label type='text' for='confirmpassword' name='confirmpassword'>Confirm Password</label>
          <input type='password' name='confirmpassword' value='<%=user.confirmpassword%>'>
          <br>
-    
+    </form>
 </body>
 </html>

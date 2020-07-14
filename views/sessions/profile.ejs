@@ -10,48 +10,53 @@
 
 </header>
 <body>
-<form action>
-<h1>Profile: <%=user.displayname%></h1>
+<br>
+<h1  class='displayname'>Profile: <%=user.displayname%></h1>
 
-<form  action="/profile/?_method=DELETE" method="POST">
-   <input id='deleteprofile' type="submit" value="DELETE Profile"/>
-</form>
 
-<form class='deleteprofile' action="/profile/id/edit" method="POST">
-     <input id='editprofile' type="submit" value="Edit Profile"/>
- </form>
-<form class='signing' action='/reno/show' method='POST'>
+
+
+
+
+    <form  class= 'signing' action="/sessions/<%=user.username %>?_method=Delete" method="POST">
+        <input style='width:100px' id='deleteprofile' type="submit" value="DELETE Profile"/>
+        <button style='width:60px' id='editprofile'><a  href="/sessions/<%= user.username %>/edit">Edit</a></button> 
+<br><br>
+    
+
+       
+
+
+
     <label type='text' for='firstname' name='name'>First Name</label>
-    <input type='text' name='firstname' value='<%=user.firstname%>'> <br>
+    <input type='text' name='firstname' value='<%=user.firstname%>' readonly> <br>
 
     <label type='text' for='lastname' name='lastname'>Last Name</label>
-    <input type='text' name='lastname' value='<%=user.lastname%>'> <br>
+    <input type='text' name='lastname' value='<%=user.lastname%>' readonly> <br>
 
     <label type='text' for=' displayname' name='displayname'>Display Name</label>
-    <input type='text' name='displayname' value='<%=user.displayname%>'> <br>
+    <input type='text' name='displayname' value='<%=user.displayname%>' readonly> <br>
 
     <label type='text' for='occupation' name='occupation'>Occupation</label>
-    <input type='text' name='occupation' value='<%=user.occupation%>'> <br>
+    <input type='text' name='occupation' value='<%=user.occupation%>' readonly> <br>
 
     <label type='text' for='investmenttype' name='investmenttype'>Investment Type</label>
-    <input type='text' name='investmenttype' value='<%=user.investmenttype%>'> <br> 
+    <input type='text' name='investmenttype' value='<%=user.investmenttype%>' readonly> <br> 
 
     <label type='text' for ='aboutme'>About Me</label> 
-    <textarea for='aboutme' type='text' name='aboutme' ><%=user.aboutme%></textarea> <br>
+    <textarea for='aboutme' type='text' name='aboutme' readonly ><%=user.aboutme%></textarea> <br>
 
     <label type='text' for='experience' name='experience'>Years of Experience</label>
-    <input type='text' name='experience' value='<%=user.experience%>'> <br>
+    <input type='text' name='experience' value='<%=user.experience%>' readonly> <br>
 
     <label type='text' for='username' name='username'>Username</label>
-    <input type='text' name='username' value='<%=user.username%>'> <br>
+    <input type='text' name='username' placeholder='<%=user.username%>' readonly> <br>
     <label type='text' for='password' name='password'>Password</label>
-    <input type='password' name='password' value='<%=user.password%>'>
+    <input type='password' name='password' value='<%=user.password%>' readonly>
     <br>
 
-    <label type='text' for='confirmpassword' name='confirmpassword'>Confirm Password</label>
-    <input type='password' name='confirmpassword' value='<%=user.confirmpassword%>'>
-    <br>
     
+    </form>
 
 
     

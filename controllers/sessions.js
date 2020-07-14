@@ -47,6 +47,78 @@ sessions.post('/', (req,res)=>{
     }
   })
 })
+
+
+
+sessions.get('/:id/edit', (req, res)=>{
+  User.findOne({username:req.session.login.username}, (err, foundUser) => {
+      res.render('edit.ejs', {
+        user: foundUser,
+        tabTitle:'Edit Profile',
+         login: req.session.login
+        
+      })
+  })
+})
+
+
+
+sessions.put('/:id', (req, res)=>{
+console.log('update route',req.body)
+  User.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel)=>{
+    res.redirect('/sessions/show');
+});
+})
+
+
+sessions.get('/show',(req,res)=>{
+  
+User.findOne({username:req.session.login.username}, (err, foundUser) => {
+  
+console.log('user is found', foundUser)
+res.render('./sessions/profile.ejs',{
+  
+ user: foundUser,
+ tabTitle:'Profile',
+  login: req.session.login
+})
+})
+
+})
+
+
+sessions.delete('/:id',  (req, res) => {
+  User.findOneAndRemove(req.params.id, { useFindAndModify: false }, (err, data)=>{
+
+    req.session.destroy(()=>{
+
+      res.redirect('/profile')
+    })
+    
+  })
+})
+/*
+sessions.delete('/:id',  (req, res) => {
+  User.findOneAndRemove(req.params.id, { useFindAndModify: false }, (err, data)=>{
+User
+    .exec()
+    .then(doc =>{
+      res.redirect('/profile') //redirect back to fruits index
+    })
+    
+  })
+})
+*/
+
+
+
+
+
+
+
+
+
+
 sessions.get('/', (req, res) => {
   
   req.session.destroy(()=>{
